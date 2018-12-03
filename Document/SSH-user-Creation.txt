@@ -1,0 +1,71 @@
+sudo useradd talend_user
+sudo usermod -a -G users talend_user
+sudo mkdir /home/talend_user
+sudo mkdir /home/talend_user/.ssh
+
+ssh-keygen -t dsa
+
+-----> /home/ec2-user/talend_qas_user.pem ( provide while it asks where to store the key )
+
+mv /home/ec2-user/talend_user.pub /home/talend_user/.ssh/authorized_keys
+
+chown -R talend_user:users /home/talend_user
+
+chmod 0600 /home/talend_user/.ssh/authorized_keys
+
+chmod 0700 /home/talend_user/.ssh 
+
+sudo vi /etc/sudoers
+
+ talend_user ALL=(ALL) NOPASSWD: ALL
+ 
+ -------------------------------------------------------------------------------------------------------
+ 
+useradd talend_user
+
+usermod -a -G users talend_user
+
+mkdir /home/talend_user
+
+mkdir /home/talend_user/.ssh
+
+ssh-keygen -t dsa
+
+-----> /home/ec2-user/talend_user.pem ( provide while it asks where to store the key )
+
+mv /home/ec2-user/talend_user.pub /home/talend_user/.ssh/authorized_keys
+
+chown -R talend_user:users /home/talend_user
+
+chmod 0600 /home/talend_user/.ssh/authorized_keys
+
+chmod 0700 /home/talend_user/.ssh 
+
+sudo vi /etc/sudoers
+
+ talend_user ALL=(ALL) NOPASSWD: ALL
+ ----------------------------------------------------------------------------
+ 
+ sudo useradd talend_qas_user
+ 
+sudo usermod -a -G users talend_qas_user
+sudo mkdir /home/talend_qas_user
+sudo mkdir /home/talend_qas_user/.ssh
+
+ssh-keygen -t dsa
+
+-----> /home/ec2-user/talend_qas_user.pem ( provide while it asks where to store the key )
+
+mv /home/ec2-user/talend_qas_user.pem.pub /home/talend_qas_user/.ssh/authorized_keys
+
+sudo chown -R talend_qas_user:users /home/talend_qas_user
+
+sudo chmod 0600 /home/talend_qas_user/.ssh/authorized_keys
+
+sudo chmod 0700 /home/talend_qas_user/.ssh 
+
+sudo vi /etc/sudoers
+
+ talend_qas_user ALL=(ALL) NOPASSWD: ALL
+ 
+ 
