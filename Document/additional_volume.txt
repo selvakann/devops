@@ -1,0 +1,31 @@
+kvskmech@gmail.com
+Whiz123$
+
+anandraj.madasamy@gmail.com / Android21 ( Linux academy )
+
+sync; echo 3 > /proc/sys/vm/drop_caches
+
+-------------------------------------------------------------------------------------
+Mount EBS volume
+
+	
+1. lsblk
+2. sudo file -s /dev/xvdf
+   If the above command output shows “/dev/xvdf: data”, it means your volume is empty.
+3. sudo mkfs -t ext4 /dev/xvdf
+4. sudo mkdir additional_volume
+5. mkdir additional_volume
+5. sudo mount /dev/xvdg additional_volume
+6. sudo rsync -avz /var/lib/elasticsearch/nodes /home/ec2-user/additional_volume
+7. sudo umount /home/ec2-user/additional_volume
+8. sudo vi /etc/fstab
+
+ /dev/xvdg  /var/lib/elasticsearch/nodes   ext4 defaults 1 1
+ 
+9.sudo mount /var/lib/elasticsearch/nodes/
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+
+https://www.edureka.co/blog/cheatsheets/jenkins-cheat-sheet/
+https://www.edureka.co/blog/cheatsheets/jenkins-cheat-sheet/
