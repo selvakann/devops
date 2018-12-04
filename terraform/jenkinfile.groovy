@@ -7,7 +7,7 @@ pipeline{
 	  stages {
 		    stage('terraform started'){
 			  steps{
-			      sh 'echo "terraform start....!!!"'
+			      sh 'echo "terraform start"'
 			  }
 			}
 			stage('git clone'){
@@ -22,12 +22,12 @@ pipeline{
 			}
 			stage('terraform init'){
 			  steps{
-			      sh 'sudo /home/ec2-user/terraform init  ./terrajenkins'
+			      sh 'sudo /home/ec2-user/terrajenkins/terraform init  ./terrajenkins'
 			  }
 			}
 		    stage('terraform plan'){
 			  steps{
-			      sh 'sudo /home/ec2-user/terraform plan  ./terrajenkins'
+			      sh 'sudo /home/ec2-user/terrajenkins/terraform plan  ./terrajenkins'
 			  }
 			}
 		    stage('terraform end'){
