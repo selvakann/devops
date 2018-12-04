@@ -17,7 +17,7 @@ pipeline{
 			}
 		    stage('terraform create'){
 			  steps{
-			      sh 'sudo cp /home/ec2-user/sg.tf terraform init  ./terrajenkins/'
+			      sh 'sudo cp /home/ec2-user/terrajenkins/sg.tf terraform init  ./terrajenkins/'
 			  }
 			}
 			stage('terraform init'){
