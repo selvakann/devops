@@ -17,7 +17,7 @@ pipeline{
 			}
 		    stage('copy the file'){
 			  steps{
-			      sh 'cp /var/lib/jenkins/workspace/first-pipeline/devops/terraform/sg.tf  /home/ec2-user/terrajenkins/sg.tf'
+			      sh 'sudo cp /var/lib/jenkins/workspace/first-pipeline/devops/terraform/sg.tf  /home/ec2-user/terrajenkins/sg.tf'
 			  }
 			}
 		    stage('terraform init'){
