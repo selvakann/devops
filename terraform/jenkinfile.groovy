@@ -23,7 +23,7 @@ pipeline{
 		    stage('terraform init'){
 			  steps{
 			      sh '/home/ec2-user/terrajenkins/ terraform init'
-			      'echo "terraform init successfull......"'
+			      sh 'echo "terraform init successfull......"'
 			  }
 			}
 		    stage('terraform end'){
