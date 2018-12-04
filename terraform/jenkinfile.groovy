@@ -12,22 +12,22 @@ pipeline{
 			}
 			stage('git clone'){
 			  steps{
-			      sh 'sudo git clone https://github.com/selvakann/devops.git'
+			      sh 'git clone https://github.com/selvakann/devops.git'
 			  }
 			}
 		    stage('terraform create'){
 			  steps{
-			      sh 'sudo cp /home/ec2-user/terrajenkins/sg.tf terraform init  ./terrajenkins/'
+			      sh 'cp /home/ec2-user/terrajenkins/sg.tf terraform init  ./terrajenkins/'
 			  }
 			}
 			stage('terraform init'){
 			  steps{
-			      sh 'sudo /home/ec2-user/terrajenkins/terraform init  ./terrajenkins'
+			      sh '/home/ec2-user/terrajenkins/terraform init  ./terrajenkins'
 			  }
 			}
 		    stage('terraform plan'){
 			  steps{
-			      sh 'sudo /home/ec2-user/terrajenkins/terraform plan  ./terrajenkins'
+			      sh '/home/ec2-user/terrajenkins/terraform plan  ./terrajenkins'
 			  }
 			}
 		    stage('terraform end'){
