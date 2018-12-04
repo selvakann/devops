@@ -17,12 +17,13 @@ pipeline{
 			}
 		    stage('copy the file'){
 			  steps{
-			      sh 'cp /home/ec2-user/terrajenkins/sg.tf'
+			      sh 'cp /var/lib/jenkins/workspace/first-pipeline/devops/terraform/sg.tf  /home/ec2-user/terrajenkins/sg.tf'
 			  }
 			}
 		    stage('terraform init'){
 			  steps{
 			      sh '/home/ec2-user/terrajenkins/ terraform init'
+			      'echo "terraform init successfull......"'
 			  }
 			}
 		    stage('terraform end'){
