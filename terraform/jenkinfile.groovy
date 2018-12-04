@@ -15,14 +15,14 @@ pipeline{
 			      sh 'rm -rf *; git clone https://github.com/selvakann/devops.git'
 			  }
 			}
-		    stage('terraform init'){
+		    stage('copy the file'){
 			  steps{
-			      sh 'terraform init'
+			      sh 'cp /home/ec2-user/terrajenkins/sg.tf'
 			  }
 			}
-		    stage('terraform plan'){
+		    stage('terraform init'){
 			  steps{
-			      sh 'terraform plan'
+			      sh '/home/ec2-user/terrajenkins/ terraform init'
 			  }
 			}
 		    stage('terraform end'){
