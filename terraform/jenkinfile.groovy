@@ -17,17 +17,17 @@ pipeline{
 			}
 		    stage('terraform create'){
 			  steps{
-			      sh 'cp /home/ec2-user/terrajenkins/sg.tf terraform init  ./terrajenkins/'
+			      sh 'cp /home/ec2-user/terrajenkins/sg.tf terraform init'
 			  }
 			}
 			stage('terraform init'){
 			  steps{
-			      sh '/home/ec2-user/terrajenkins/terraform init  ./terrajenkins'
+			      sh '/home/ec2-user/terrajenkins/terraform init'
 			  }
 			}
 		    stage('terraform plan'){
 			  steps{
-			      sh '/home/ec2-user/terrajenkins/terraform plan  ./terrajenkins'
+			      sh '/home/ec2-user/terrajenkins/terraform plan'
 			  }
 			}
 		    stage('terraform end'){
