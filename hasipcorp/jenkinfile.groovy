@@ -10,14 +10,25 @@ pipeline{
 			      sh 'echo "terraform start....!"'
 			  }
 			}
-			stage('git clone'){
+			stage('change folder'){
 			  steps{
-			      sh 'sudo rm -rf *;sudo git clone https://github.com/selvakann/devops.git'
+			      sh 'cd /var/lib/jenkins/workspace/first-pipeline'
 			  }
 			}
+			stage('Remove the existing code'){
+			  steps{
+			      sh 'sudo rm -rf *'
+			  }
+			}
+			stage('Git clone'){
+			  steps{
+			      sh 'sudo git clone https://github.com/selvakann/devops.git'
+			  }
+			}
+			
 		    stage('terraform init'){
 			  steps{
-			      sh '/var/lib/jenksin/workspace/devops/hasipcorp/ terraform init'
+			      sh 'cd /var/lib/jenksin/workspace/devops/hasipcorp/ terraform init'
 			  }
 			}
 		    stage('terraform plan'){
@@ -28,3 +39,7 @@ pipeline{
 		
 	}
 }	
+
+
+
+
