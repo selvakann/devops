@@ -12,11 +12,16 @@ pipeline{
 			}
 			stage('change folder'){
 			  steps{
-			      sh 'cd /var/lib/jenkins/workspace/first-pipeline && sudo rm -rf *'
+			      sh 'cd /var/lib/jenkins/workspace/first-pipeline'
 				  sh 'echo "Changing folder....!"'
 			  }
 			}
-			
+			stage('Remove folder'){
+			  steps{
+			      sh 'sudo rm -rf *'
+				  sh 'echo "Remove folder....!"'
+			  }
+			}
 			stage('Git clone'){
 			  steps{
 			      sh 'sudo git clone https://github.com/selvakann/devops.git'
