@@ -17,12 +17,12 @@ pipeline{
 			}
 		    stage('terraform init'){
 			  steps{
-			      sh '/var/lib/jenksin/workspace/hasicorp/ terraform init'
+			      sh '/var/lib/jenksin/workspace/devops/hasipcorp/ terraform init'
 			  }
 			}
 		    stage('terraform plan'){
 			  steps{
-			      sh '/var/lib/jenksin/workspace/hasicorp/ terraform plan'
+			      sh '/var/lib/jenksin/workspace/devops/hasipcorp/ terraform plan'
 			  }
 			}
 		
