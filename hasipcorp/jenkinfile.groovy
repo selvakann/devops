@@ -12,7 +12,7 @@ pipeline{
 			}
 			stage('git clone'){
 			  steps{
-			      sh 'sudo rm -r *;sudo git clone https://github.com/selvakann/devops.git'
+			      sh 'sudo rm -rf *;sudo git clone https://github.com/selvakann/devops.git'
 			  }
 			}
 		    stage('terraform init'){
