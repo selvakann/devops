@@ -24,7 +24,7 @@ pipeline{
 			}
 			stage('Git clone'){
 			  steps{
-			      sh 'sudo git clone https://github.com/selvakann/devops.git'
+			      sh 'git clone https://github.com/selvakann/devops.git'
 			  }
 			}
 			
