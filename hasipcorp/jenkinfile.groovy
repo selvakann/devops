@@ -30,12 +30,12 @@ pipeline{
 			
 		    stage('terraform init'){
 			  steps{
-			      sh 'cd /var/lib/jenksin/workspace/devops/hasipcorp/ terraform init'
+			      sh 'terraform init'
 			  }
 			}
 		    stage('terraform plan'){
 			  steps{
-			      sh '/var/lib/jenksin/workspace/devops/hasipcorp/ terraform plan'
+			      sh 'terraform plan'
 			  }
 			}
 		
