@@ -18,7 +18,7 @@ pipeline{
 			}
 			stage('Remove folder'){
 			  steps{
-			      sh 'sudo rm -r *'
+			      sh 'rm -rf *'
 				  sh 'echo "Remove folder....!"'
 			  }
 			}
