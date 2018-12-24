@@ -11,7 +11,7 @@ pipeline {
      
         stage("DEV") {
         
-               if("${params.Environemnt}"=="DEV")
+               if("${Environemnt}:selected"=="DEV")
                {
                      steps {
                             echo "flag:${params.userFlag1}-DEV"
