@@ -9,14 +9,15 @@ pipeline {
     }
      stages {
      
+        stage("DEV") {
+        
            if("${params.Environemnt}"=="DEV")
            {
-                stage("DEV") {
-                    steps {
+                 steps {
                         echo "flag:${params.userFlag1}-DEV"
-                    }
-                }
-           }
+                        }
+            }
+        
             else
             {
 
@@ -24,9 +25,9 @@ pipeline {
 
             }
             
-        }
+     }
 
-   }
+ }
  
 
    
