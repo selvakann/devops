@@ -4,6 +4,7 @@ pipeline {
     parameters {
  
          string(defaultValue: "TEST", description: 'What environment?', name: 'userFlag1')
+         choice(choices: ['DEV', 'QAS','PRD'], description: 'What environment?', name: 'Environemnt')
         choice(choices: ['US-EAST-1', 'US-WEST-2'], description: 'What AWS region?', name: 'region')
     }
      stages {
