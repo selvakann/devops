@@ -11,20 +11,20 @@ pipeline {
      
         stage("DEV") {
         
-           if("${params.Environemnt}"=="DEV")
-           {
-                 steps {
-                        echo "flag:${params.userFlag1}-DEV"
-                        }
-            }
-        
-            else
-            {
+               if("${params.Environemnt}"=="DEV")
+               {
+                     steps {
+                            echo "flag:${params.userFlag1}-DEV"
+                            }
+                }
 
-                 echo "There is no environemnt selected!!!!!!!!!!"
+                else
+                {
 
-            }
-            
+                     echo "There is no environemnt selected!!!!!!!!!!"
+
+                }
+           } 
      }
 
  }
