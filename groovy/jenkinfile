@@ -8,25 +8,26 @@ pipeline {
         choice(choices: ['US-EAST-1', 'US-WEST-2'], description: 'What AWS region?', name: 'region')
     }
      stages {
-        stage("DEV") {
-            steps {
-                echo "flag:${params.userFlag1}-DEV"
+     
+           if(${params.Environemnt}"="DEV")
+           {
+                stage("DEV") {
+                    steps {
+                        echo "flag:${params.userFlag1}-DEV"
+                    }
+                }
+           }
+            else
+            {
+
+                 echo "There is no environemnt selected!!!!!!!!!!"
+
             }
+            
         }
-        stage("QAS") {
-            steps {
-                echo "flag:${params.userFlag1}-QAS"
-            }
-        }
-         stage("PRD") {
-            steps {
-                echo "flag:${params.userFlag1}-PRD"
-            }
-        }
-    }
-   
-    
+
+   }
  
 
    
-}
+
