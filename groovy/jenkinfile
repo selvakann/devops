@@ -9,7 +9,7 @@ pipeline {
     }
      stages {
      
-           if(${params.Environemnt}"="DEV")
+           if(${params.Environemnt}"=="DEV")
            {
                 stage("DEV") {
                     steps {
