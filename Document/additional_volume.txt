@@ -1,7 +1,4 @@
-kvskmech@gmail.com
-Whiz123$
 
-anandraj.madasamy@gmail.com / Android21 ( Linux academy )
 
 sync; echo 3 > /proc/sys/vm/drop_caches
 
