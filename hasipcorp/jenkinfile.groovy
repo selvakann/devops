@@ -32,19 +32,19 @@ pipeline{
 			
 		    stage('terraform init'){
 			  steps{
-			      sh '/var/lib/jenkins/workspace/second/devops/hasipcorp && terraform init'
+			      sh 'cd /var/lib/jenkins/workspace/second/devops/hasipcorp && terraform init'
 			      
 			  }
 			}
 		    stage('terraform plan'){
 			  steps{
-			      sh '/var/lib/jenkins/workspace/second/devops/hasipcorp'
+			      sh 'cd /var/lib/jenkins/workspace/second/devops/hasipcorp'
 			      sh 'terraform plan'
 			  }
 			}
 		stage('terraform apply'){
 			  steps{
-			       sh '/var/lib/jenkins/workspace/second/devops/hasipcorp'
+			       sh 'cd /var/lib/jenkins/workspace/second/devops/hasipcorp'
 			      sh 'terraform apply'
 			  }
 			}
