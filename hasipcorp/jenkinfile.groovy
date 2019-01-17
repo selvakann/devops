@@ -12,27 +12,26 @@ pipeline{
 			}
 			stage('change folder'){
 			  steps{
-			      sh 'cd /var/lib/jenkins/workspace/second'
+			      sh 'cd /var/lib/jenkins/workspace'
 				  sh 'echo "Changing folder....!"'
 			  }
 			}
 			stage('Remove folder'){
 			  steps{
-			      sh 'cd /var/lib/jenkins/workspace/second'
+			      sh 'cd /var/lib/jenkins/workspace'
 			      sh 'rm -rf *'
 				  sh 'echo "Remove folder....!"'
 			  }
 			}
 			stage('Git clone'){
 			  steps{
-			      sh 'cd /var/lib/jenkins/workspace/second'
-			      sh 'git clone https://github.com/selvakann/devops.git'
+			     sh 'git clone https://github.com/selvakann/devops.git'
 			  }
 			}
 			
 		    stage('terraform init'){
 			  steps{
-			      sh 'terraform init'
+			      sh 'cd /var/lib/jenkins/workspace/second/devops/hasipcorp && terraform init'
 			      
 			  }
 			}
