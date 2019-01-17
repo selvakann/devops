@@ -12,7 +12,7 @@ pipeline{
 			}
 			stage('change folder'){
 			  steps{
-			      sh 'cd /var/lib/jenkins/workspace/first-pipeline'
+			      sh 'cd /var/lib/jenkins/workspace/second'
 				  sh 'echo "Changing folder....!"'
 			  }
 			}
@@ -38,7 +38,11 @@ pipeline{
 			      sh 'terraform plan'
 			  }
 			}
-		
+		stage('terraform plan'){
+			  steps{
+			      sh 'terraform apply'
+			  }
+			}
 	}
 }	
 
