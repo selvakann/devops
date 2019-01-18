@@ -26,12 +26,13 @@ pipeline{
 			stage('Git clone'){
 			  steps{
 			     sh 'git clone https://github.com/selvakann/devops.git'
+		             sh 'cd /var/lib/jenkins/workspace/second-job/devops/hasipcorp'
 			  }
 			}
 			
 		    stage('terraform init'){
 			  steps{
-			      sh 'cd /var/lib/jenkins/workspace/second-job/devops/hasipcorp && terraform init'
+			      sh 'terraform init'
 			      
 			  }
 			}
