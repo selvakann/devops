@@ -32,7 +32,7 @@ pipeline{
 			
 		    stage('terraform init'){
 			  steps{
-			      sh 'def userInput = input(id: 'confirm', message: 'init Terraform',, parameters: [description: 'Apply terraform', name: 'confirm'])
+			      sh 'def userInput = input(id: 'confirm', message: 'init Terraform',parameters: [description: 'Apply terraform', name: 'confirm'])
 			      
 			  }
 			}
