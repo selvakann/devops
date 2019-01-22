@@ -32,18 +32,18 @@ pipeline{
 			
 		    stage('terraform init'){
 			  steps{
-			      sh 'terraform init'
+			      sh 'terraform init -input=false'
 			      
 			  }
 			}
 		    stage('terraform plan'){
 			  steps{
-			       sh 'terraform plan /usr/local/bin/'
+			       sh 'terraform plan'
 			  }
 			}
 		stage('terraform apply'){
 			  steps{
-			      sh 'terraform apply /usr/local/bin/'
+			      sh 'terraform apply'
 			  }
 			}
 	
