@@ -32,17 +32,17 @@ pipeline{
 			
 		    stage('terraform init'){
 			  steps{
-			        sh 'terraform init'
+			        sh 'terraform init -input=false'
 			       }
 			}
 		    stage('terraform plan'){
 			  steps{
-			       sh 'terraform plan'
+			       sh 'terraform plan -input=false -auto-approve'
 			  }
 			}
 		stage('terraform apply'){
 			  steps{
-			      sh 'terraform apply'
+			      sh 'terraform apply -input=false -auto-approve'
 			  }
 			}
 	
