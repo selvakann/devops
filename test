@@ -32,9 +32,9 @@ pipeline{
 			
 		    stage('terraform init'){
 			  steps{
-			        sh 'mkdir /home/ec2-user/temp'
-              			sh 'cp *.tf /home/ec2-user/temp'
-              			sh 'cd  /home/ec2-user/temp '
+			        sh 'mkdir cd /var/lib/jenkins/workspace/temp'
+              			sh 'cp /var/lib/jenkins/workspace/second-job/devops/hasipcorp/*.tf /var/lib/jenkins/workspace/temp/'
+              			sh 'cd  /var/lib/jenkins/workspace/temp/'
 			        sh 'terraform init -input=false'
 			       }
 			}
